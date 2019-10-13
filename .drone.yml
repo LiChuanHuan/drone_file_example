@@ -6,11 +6,3 @@ steps:
     image: golang
     commands:
       - go version
-
-trigger:
-  branch:
-    - master
-  event:
-    - push
-    - pull_request
-    - tag
