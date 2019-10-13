@@ -8,3 +8,8 @@ steps:
     image: golang
     commands:
       - go version
+
+trigger:
+  event:
+    - push
+    - tag
