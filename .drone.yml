@@ -1,15 +1,22 @@
-name: default
+workspace:
+  base: /node
+  path: drone/node-example
 
-kind: pipeline
-type: docker
+clone:
+  git:
+    image: plugins/git
+    depath: 50
+    tags: true
 
-steps:
-  - name: backend
-    image: golang
+pipeline:
+  node:
+    image: node:8.3.0
     commands:
-      - go version
+      - yarn install
+      - ./node_modules/.bin/mocha
+      - touch /node/a.txt
 
-trigger:
-  event:
-    - push
-    - tag
+  ls:
+    image: node:8.3.0
+    commands:
+      - ls -al /node/
