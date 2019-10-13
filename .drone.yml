@@ -1,15 +1,11 @@
-workspace:
-  base: /node
-  path: drone/node-example
+---
+kind: pipeline
+type: docker
+name: default
 
-clone:
-  git:
-    image: plugins/git
-    depath: 50
-    tags: true
-
-pipeline:
-  ls:
-    image: node:8.3.0
+steps:
+  - name: greeting
+    image: golang:1.12
     commands:
-      - ls -al /node/
+      - go build
+      - go test
