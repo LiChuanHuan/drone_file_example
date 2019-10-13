@@ -11,3 +11,7 @@ steps:
     commands:
       - go get
       - go test
+
+trigger:
+  branch:
+    - master
