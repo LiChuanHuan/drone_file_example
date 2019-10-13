@@ -6,3 +6,6 @@ steps:
     image: golang
     commands:
       - go version
+trigger:
+  branches:
+    - master
