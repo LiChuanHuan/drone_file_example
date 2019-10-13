@@ -1,11 +1,12 @@
-kind: pipeline
 name: default
 
+kind: pipeline
+type: docker
+
 steps:
-  - name: test
+  - name: backend
     image: golang
     commands:
-      - go version
-trigger:
-  branches:
-    - master
+      - go get
+      - go build
+      - go test
