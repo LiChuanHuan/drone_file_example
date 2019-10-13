@@ -8,3 +8,4 @@ steps:
     image: golang:1.12
     commands:
       - go version
+      - go version
