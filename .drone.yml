@@ -8,7 +8,6 @@ steps:
     image: golang
     commands:
       - go version
-      - go version
 
 trigger:
   event:
